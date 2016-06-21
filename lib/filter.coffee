@@ -20,6 +20,11 @@ class Minifier extends TransformStream
     this.opts = assign {}, opts, defaults
   
   _transform: (chunk, encoding, cb) ->
+    console.log "------MINIFY------"
+    console.log chunk.toString('utf8')
+    console.log "------AFTER-------"
+    console.log minify(chunk.toString('utf8'), this.opts)
+    console.log "------END---------"
     this.push minify(chunk.toString('utf8'), this.opts)
     cb()
     

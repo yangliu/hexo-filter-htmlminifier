@@ -1,5 +1,7 @@
 # hexo-filter-htmlminifier
 
+[![Build Status](https://travis-ci.org/yangliu/hexo-filter-htmlminifier.svg?branch=master)](https://travis-ci.org/yangliu/hexo-filter-htmlminifier)
+
 A Hexo filter to minify HTML files using [HTML Minifier](https://kangax.github.io/html-minifier/)
 
 ## Install

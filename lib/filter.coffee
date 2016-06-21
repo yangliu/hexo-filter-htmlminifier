@@ -3,8 +3,7 @@ minimatch = require 'minimatch'
 async = require 'async'
 assign = require 'object-assign'
 accum = require 'accum'
-
-TransformStream = require('stream').TransformStream
+TransformStream = require('stream').Transform
 
 class Minifier extends TransformStream
   constructor: (opts) ->
@@ -20,18 +19,13 @@ class Minifier extends TransformStream
     this.opts = assign {}, opts, defaults
   
   _transform: (chunk, encoding, cb) ->
-    console.log "------MINIFY------"
-    console.log chunk.toString('utf8')
-    console.log "------AFTER-------"
-    console.log minify(chunk.toString('utf8'), this.opts)
-    console.log "------END---------"
     this.push minify(chunk.toString('utf8'), this.opts)
     cb()
     
 
 setRoutes = (opts, resolve, reject, route, paths) ->
   async.forEach(
-    path,
+    paths,
     (path, callback) ->
       route.get path
         .pipe new Minifier(opts)

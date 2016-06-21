@@ -4,7 +4,7 @@
   "description": "A Hexo plugin to minify output HTML files with HTMLMinifier",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "node test"
   },
   "directories": {
     "lib": "./lib"
@@ -34,8 +34,7 @@
     "object-assign": "^4.1.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-coffeelint": "^0.6.0",
-    "gulp-load-plugins": "^1.2.4"
+    "hexo": "^3.2.0",
+    "tape": "^4.6.0"
   }
 }

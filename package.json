@@ -1,0 +1,41 @@
+{
+  "name": "hexo-filter-htmlminifier",
+  "version": "1.0.0",
+  "description": "A Hexo plugin to minify output HTML files with HTMLMinifier",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangliu/hexo-filter-htmlminifier.git"
+  },
+  "keywords": [
+    "hexo",
+    "filter",
+    "html",
+    "minifier"
+  ],
+  "author": "Yang Liu <i@yangliu.name>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yangliu/hexo-filter-htmlminifier/issues"
+  },
+  "homepage": "https://github.com/yangliu/hexo-filter-htmlminifier#readme",
+  "dependencies": {
+    "accum": "^0.3.6",
+    "async": "^2.0.0-rc.6",
+    "coffee-script": "^1.10.0",
+    "html-minifier": "^2.1.5",
+    "minimatch": "^3.0.2",
+    "object-assign": "^4.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffeelint": "^0.6.0",
+    "gulp-load-plugins": "^1.2.4"
+  }
+}

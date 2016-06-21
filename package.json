@@ -1,7 +1,7 @@
 {
   "name": "hexo-filter-htmlminifier",
   "version": "1.0.0",
-  "description": "A Hexo plugin to minify output HTML files with HTMLMinifier",
+  "description": "A Hexo plugin to minify output HTML files with HTML Minifier",
   "main": "index.js",
   "scripts": {
     "test": "node test"

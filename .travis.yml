@@ -1,7 +1,15 @@
 language: node_js
 node_js:
-  - "6"
-  - "5"
-  - "4"
-  - "node"
-  - "iojs"
+- '6'
+- '5'
+- '4'
+- node
+- iojs
+deploy:
+  provider: npm
+  email: istef.liu@gmail.com
+  api_key:
+    secure: BzCVsdtkVO9o2r66h/q8EMNvPOjGbgcHpQH0qxVBXpFO0BEpHwmkuMrVhgfvAAQxcbfydJ7vhWQG24YmBfgS99gCyWcNKuwBsysDPQkiaUe2OWcyEQBZnOEd7XJJY3WosTvb1ZD0Uv+KN+AJRB7zBSOaTcLFo/uKRO+U9hq95xFhXZ8sx+ZVtf0CRa6zXuurs+UOMZCxWPcAGZSFt1G/djUpq6OYM/6mk4xSA73pl57i/oIx1wiN2FWx9py4Lpahwa3zFIpBtZWzfgtL7Qi78iS+CtQg5xWNV+EW4GWnQL0BuGOyeBCmZttT/CYBjB/gH5WQyCKPe/sXEYWqkUn85lAvnraEGaP9Q5/5Z3HSWQzlsCd40ZkCNeUAdjfirakU7gKq3puy/KGqPGpoAgvRswKG1gnlr9/+ctp50igGnMTixXZZ/fJHsoXFuYVfTfSo9yKHB6xvI3jfTxosr0aqtWp4ARUqWdSFMx0LxqpS8O2blXck33lAP8D76lrNqS8J4h6RiOWkop6UM+nKZnm7bsbgOdEg3ciXmmD78PJNXMcRwBkSUMIHuw44ySXHaPF+0oR7YUJk62Ivdrxr2h1QBV7ILiMZbsVxsf2udN08Gfk8HdZUAuAcY5SyRsPAlpde6YB82GMDGkT5W//sVZvgfCqvZbXETcAEwTMyYs67xdY=
+  on:
+    tags: true
+    repo: yangliu/hexo-filter-htmlminifier

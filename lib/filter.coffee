@@ -19,16 +19,23 @@ class Minifier extends TransformStream
     this.opts = assign {}, opts, defaults
   
   _transform: (chunk, encoding, cb) ->
-    this.push minify(chunk.toString('utf8'), this.opts)
+    try
+      chunk = minify(chunk.toString('utf8'), this.opts)
+    catch err
+      throw err
+
+    this.push chunk
     cb()
     
 
-setRoutes = (opts, resolve, reject, route, paths) ->
+setRoutes = (ctx, opts, resolve, reject, route, paths) ->
   async.forEach(
     paths,
     (path, callback) ->
       route.get path
         .pipe new Minifier(opts)
+          .on 'error', (e) ->
+            ctx.log.debug "Minifier Error: %s", e
         .pipe accum.buffer (buffer) ->
           route.set path, buffer
           callback()
@@ -46,5 +53,5 @@ module.exports = ->
   
   return new Promise(
     (resolve, reject) ->
-      setRoutes opts, resolve, reject, route, routes
+      setRoutes hexo, opts, resolve, reject, route, routes
   )
